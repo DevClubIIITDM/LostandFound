@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.institute.lostandfound.ui.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        
+        <action
+            android:id="@+id/action_home_to_item_detail"
+            app:destination="@id/navigation_item_detail" />
+        
+        <action
+            android:id="@+id/action_home_to_lost"
+            app:destination="@id/navigation_lost" />
+        
+        <action
+            android:id="@+id/action_home_to_found"
+            app:destination="@id/navigation_found" />
+        
+        <action
+            android:id="@+id/action_home_to_post"
+            app:destination="@id/navigation_post" />
+            
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_lost"
+        android:name="com.institute.lostandfound.ui.LostItemsFragment"
+        android:label="Lost Items"
+        tools:layout="@layout/fragment_lost_items">
+        
+        <action
+            android:id="@+id/action_lost_to_item_detail"
+            app:destination="@id/navigation_item_detail" />
+            
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_found"
+        android:name="com.institute.lostandfound.ui.FoundItemsFragment"
+        android:label="Found Items"
+        tools:layout="@layout/fragment_found_items">
+        
+        <action
+            android:id="@+id/action_found_to_item_detail"
+            app:destination="@id/navigation_item_detail" />
+            
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_post"
+        android:name="com.institute.lostandfound.ui.PostItemFragment"
+        android:label="Post Item"
+        tools:layout="@layout/fragment_post_item" />
+
+    <fragment
+        android:id="@+id/navigation_item_detail"
+        android:name="com.institute.lostandfound.ui.ItemDetailFragment"
+        android:label="Item Details"
+        tools:layout="@layout/fragment_item_detail" />
+
+</navigation> 

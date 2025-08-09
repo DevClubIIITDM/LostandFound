@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lost &amp; Found</string>
+    
+    <!-- Navigation -->
+    <string name="title_home">Home</string>
+    <string name="title_lost">Lost Items</string>
+    <string name="title_found">Found Items</string>
+    <string name="title_post">Post Item</string>
+    <string name="title_item_detail">Item Details</string>
+    
+    <!-- Common -->
+    <string name="loading">Loading...</string>
+    <string name="error">Error occurred</string>
+    <string name="retry">Retry</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    
+    <!-- Post Item -->
+    <string name="hint_title">Item Title</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_location">Location (Last seen/Found)</string>
+    <string name="hint_contact">Contact Information</string>
+    <string name="hint_reporter_name">Your Name</string>
+    <string name="hint_reporter_email">Your Email</string>
+    <string name="label_category">Category</string>
+    <string name="label_type">Type</string>
+    <string name="button_add_image">Add Image</string>
+    <string name="button_remove_image">Remove</string>
+    <string name="button_submit">Post Item</string>
+    
+    <!-- Item Detail -->
+    <string name="button_contact">Contact Reporter</string>
+    <string name="button_mark_resolved">Mark as Resolved</string>
+    <string name="label_contact_info">Contact Information</string>
+    
+    <!-- Messages -->
+    <string name="message_item_posted">Item posted successfully!</string>
+    <string name="message_item_resolved">Item marked as resolved</string>
+    <string name="message_permission_denied">Permission denied</string>
+    <string name="message_no_email_app">No email app found</string>
+    
+    <!-- Empty states -->
+    <string name="empty_no_items">No items posted yet</string>
+    <string name="empty_no_lost_items">No lost items reported yet</string>
+    <string name="empty_no_found_items">No found items reported yet</string>
+    
+    <!-- Content descriptions -->
+    <string name="cd_lost_items">Lost items</string>
+    <string name="cd_found_items">Found items</string>
+    <string name="cd_post_item">Post item</string>
+    <string name="cd_item_image">Item image</string>
+</resources> 
