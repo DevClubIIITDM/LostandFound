@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Gear/Cogwheel outline -->
+    <path
+        android:fillColor="#87CEEB"
+        android:strokeColor="#87CEEB"
+        android:strokeWidth="2"
+        android:pathData="M54,20L58,22L62,26L64,30L66,34L66,38L64,42L62,46L58,50L54,52L50,50L46,46L44,42L42,38L42,34L44,30L46,26L50,22L54,20ZM54,24L50,26L46,30L44,34L44,38L46,42L50,46L54,48L58,46L62,42L64,38L64,34L62,30L58,26L54,24Z"/>
+    
+    <!-- Gear teeth -->
+    <path
+        android:fillColor="#87CEEB"
+        android:pathData="M54,16L56,18L58,20L54,20L52,18L54,16Z"/>
+    <path
+        android:fillColor="#87CEEB"
+        android:pathData="M54,88L56,90L58,92L54,92L52,90L54,88Z"/>
+    <path
+        android:fillColor="#87CEEB"
+        android:pathData="M16,54L18,56L20,58L20,54L18,52L16,54Z"/>
+    <path
+        android:fillColor="#87CEEB"
+        android:pathData="M88,54L90,56L92,58L92,54L90,52L88,54Z"/>
+    
+    <!-- Abstract human figure - body and legs (dark blue X shape) -->
+    <path
+        android:fillColor="#000080"
+        android:pathData="M48,40L44,44L42,48L40,52L38,56L36,60L38,64L40,68L42,72L44,76L48,80L52,76L54,72L56,68L58,64L60,60L58,56L56,52L54,48L52,44L48,40Z"/>
+    
+    <!-- Arms (curved pink line) -->
+    <path
+        android:fillColor="#FFC0CB"
+        android:strokeColor="#FFC0CB"
+        android:strokeWidth="3"
+        android:pathData="M40,48Q38,46 36,48Q34,50 36,52"/>
+    <path
+        android:fillColor="#FFC0CB"
+        android:strokeColor="#FFC0CB"
+        android:strokeWidth="3"
+        android:pathData="M68,48Q70,46 72,48Q74,50 72,52"/>
+    
+    <!-- Head (elongated yellow oval) -->
+    <path
+        android:fillColor="#FFFF00"
+        android:pathData="M50,32L58,32L58,40L50,40L50,32ZM52,34L56,34L56,38L52,38L52,34Z"/>
+    
+    <!-- Text "IIITD&M" (dark bold font) -->
+    <path
+        android:fillColor="#000080"
+        android:pathData="M30,85L32,85L32,87L30,87L30,85ZM34,85L36,85L36,87L34,87L34,85ZM38,85L40,85L40,87L38,87L38,85ZM42,85L44,85L44,87L42,87L42,85ZM46,85L48,85L48,87L46,87L46,85ZM50,85L52,85L52,87L50,87L50,85ZM54,85L56,85L56,87L54,87L54,85ZM58,85L60,85L60,87L58,87L58,85ZM62,85L64,85L64,87L62,87L62,85ZM66,85L68,85L68,87L66,87L66,85ZM70,85L72,85L72,87L70,87L70,85ZM74,85L76,85L76,87L74,87L74,85ZM78,85L80,85L80,87L78,87L78,85ZM81,90L83,90L83,92L81,92L81,90Z"/>
+    
+    <!-- Text "Kancheepuram" (smaller regular font) -->
+    <path
+        android:fillColor="#000080"
+        android:pathData="M25,90L27,90L27,92L25,92L25,90ZM29,90L31,90L31,92L29,92L29,90ZM33,90L35,90L35,92L33,92L33,90ZM37,90L39,90L39,92L37,92L37,90ZM41,90L43,90L43,92L41,92L41,90ZM45,90L47,90L47,92L45,92L45,90ZM49,90L51,90L51,92L49,92L49,90ZM53,90L55,90L55,92L53,92L53,90ZM57,90L59,90L59,92L57,92L57,90ZM61,90L63,90L63,92L61,92L61,90ZM65,90L67,90L67,92L65,92L65,90ZM69,90L71,90L71,92L69,92L69,90ZM73,90L75,90L75,92L73,92L73,90ZM77,90L79,90L79,92L77,92L77,90ZM81,90L83,90L83,92L81,92L81,90Z"/>
+    
+</vector>

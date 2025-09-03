@@ -32,12 +32,22 @@ class LostItemsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
+        setupRefreshLayout()
         observeData()
+        // Load lost items when fragment is created
+        viewModel.loadLostItems()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Refresh data when fragment becomes visible
+        viewModel.loadLostItems()
     }
 
     private fun setupRecyclerView() {
         adapter = ItemAdapter { item ->
-            viewModel.selectItem(item)
+            // Navigate to item detail
+            viewModel.setSelectedItem(item)
             findNavController().navigate(R.id.action_lost_to_item_detail)
         }
         
@@ -46,11 +56,30 @@ class LostItemsFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
         }
     }
+    
+    private fun setupRefreshLayout() {
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            viewModel.loadLostItems()
+        }
+    }
 
     private fun observeData() {
-        viewModel.getItemsByType(ItemType.LOST).observe(viewLifecycleOwner) { items ->
-            adapter.submitList(items)
+        viewModel.lostItems.observe(viewLifecycleOwner) { items ->
+            adapter.updateItems(items)
             binding.textEmptyState.visibility = if (items.isEmpty()) View.VISIBLE else View.GONE
+        }
+        
+        // Also observe loading state
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            binding.swipeRefreshLayout.isRefreshing = isLoading
+        }
+        
+        // Observe errors
+        viewModel.error.observe(viewLifecycleOwner) { error ->
+            error?.let {
+                // Handle error if needed
+                viewModel.clearError()
+            }
         }
     }
 

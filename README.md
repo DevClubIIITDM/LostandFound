@@ -38,10 +38,16 @@ A modern Android application built with Kotlin for institute students to post an
 
 ## Installation & Setup
 
+## Environment Setup
+
 ### Prerequisites
 - Android Studio Arctic Fox or later
 - Kotlin 1.9.10+
 - Android SDK 24+ (Android 7.0)
+- Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+- Enable Authentication (Google Sign-In)
+- Enable Firestore Database
+- Enable Firebase Storage
 
 ### Setup Instructions
 
@@ -50,6 +56,60 @@ A modern Android application built with Kotlin for institute students to post an
 3. **Sync project** with Gradle files
 4. **Build the project**: `Build > Make Project`
 5. **Run on device/emulator**: `Run > Run 'app'`
+
+## Quick Setup
+
+### Option 1: Automated Setup (Recommended)
+Run the setup script to automatically create configuration files:
+
+**Windows:**
+```bash
+setup.bat
+```
+
+**Linux/Mac:**
+```bash
+./setup.sh
+```
+
+### Option 2: Manual Setup
+If you prefer to set up manually, follow these steps:
+
+1. **Copy environment template:**
+   ```bash
+   cp .env.example .env
+   cp app/google-services.json.example app/google-services.json
+   ```
+
+2. **Update `.env` file with your Firebase credentials:**
+   - Get your project number from Firebase Console
+   - Get your project ID from Firebase Console
+   - Get your API keys from Firebase Console
+   - Get your OAuth client IDs from Firebase Console
+
+3. **Update `app/google-services.json` with your Firebase configuration:**
+   - Download the actual `google-services.json` from Firebase Console
+   - Replace the example file with your actual configuration
+
+4. **Build and run the project:**
+   ```bash
+   ./gradlew build
+   ```
+
+### Environment Variables
+
+The following environment variables are required:
+
+- `FIREBASE_PROJECT_NUMBER`: Your Firebase project number
+- `FIREBASE_PROJECT_ID`: Your Firebase project ID
+- `FIREBASE_STORAGE_BUCKET`: Your Firebase storage bucket
+- `FIREBASE_MOBILE_SDK_APP_ID`: Your mobile SDK app ID
+- `FIREBASE_OAUTH_CLIENT_ID_ANDROID`: Android OAuth client ID
+- `FIREBASE_OAUTH_CLIENT_ID_WEB`: Web OAuth client ID
+- `FIREBASE_API_KEY`: Your Firebase API key
+- `FIREBASE_CRASH_REPORTING_API_KEY`: Your crash reporting API key
+- `FIREBASE_CERTIFICATE_HASH`: Your certificate hash for Android OAuth
+- `ANDROID_PACKAGE_NAME`: Your Android package name
 
 ## Project Structure
 

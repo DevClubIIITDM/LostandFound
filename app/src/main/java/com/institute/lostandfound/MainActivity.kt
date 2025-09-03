@@ -10,14 +10,22 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.institute.lostandfound.databinding.ActivityMainBinding
+import com.institute.lostandfound.viewmodel.AuthViewModel
+import com.institute.lostandfound.config.EnvironmentConfig
+import androidx.activity.viewModels
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private val authViewModel: AuthViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Initialize environment configuration
+        EnvironmentConfig.init(this)
+        
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -39,6 +47,31 @@ class MainActivity : AppCompatActivity() {
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        // Observe authentication state
+        authViewModel.currentUser.observe(this) { user ->
+            if (user != null) {
+                // User is authenticated, show bottom navigation
+                bottomNav.visibility = android.view.View.VISIBLE
+            } else {
+                // User is not authenticated, hide bottom navigation
+                bottomNav.visibility = android.view.View.GONE
+            }
+        }
+
+        // Handle navigation to auth when user signs out
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.navigation_auth -> {
+                    bottomNav.visibility = android.view.View.GONE
+                }
+                else -> {
+                    if (authViewModel.currentUser.value != null) {
+                        bottomNav.visibility = android.view.View.VISIBLE
+                    }
+                }
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -3,7 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/navigation_home">
+    app:startDestination="@id/navigation_landing">
+
+    <fragment
+        android:id="@+id/navigation_landing"
+        android:name="com.institute.lostandfound.ui.LandingFragment"
+        android:label="Landing"
+        tools:layout="@layout/fragment_landing">
+        
+        <action
+            android:id="@+id/action_landing_to_auth"
+            app:destination="@id/navigation_auth" />
+            
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_auth"
+        android:name="com.institute.lostandfound.ui.AuthFragment"
+        android:label="Authentication"
+        tools:layout="@layout/fragment_auth">
+        
+        <action
+            android:id="@+id/action_auth_to_home"
+            app:destination="@id/navigation_home" />
+            
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_home"
@@ -26,6 +50,12 @@
         <action
             android:id="@+id/action_home_to_post"
             app:destination="@id/navigation_post" />
+            
+        <action
+            android:id="@+id/action_home_to_auth"
+            app:destination="@id/navigation_auth"
+            app:popUpTo="@id/navigation_auth"
+            app:popUpToInclusive="true" />
             
     </fragment>
 

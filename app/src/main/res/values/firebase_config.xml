@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Firebase Configuration -->
+    <!-- This file contains Firebase-related string resources -->
+    <!-- The actual values are provided by google-services.json -->
+    
+    <string name="firebase_web_client_id" translatable="false">@string/default_web_client_id</string>
+    
+    <!-- Add other Firebase-related strings here if needed -->
+    <string name="firebase_project_id" translatable="false">@string/project_id</string>
+    <string name="firebase_storage_bucket" translatable="false">@string/google_storage_bucket</string>
+</resources>

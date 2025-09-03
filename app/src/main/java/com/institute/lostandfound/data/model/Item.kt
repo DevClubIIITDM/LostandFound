@@ -1,39 +1,49 @@
 package com.institute.lostandfound.data.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import java.util.Date
+import com.google.firebase.Timestamp
+import com.google.firebase.firestore.DocumentId
 
-@Entity(tableName = "items")
 data class Item(
-    @PrimaryKey(autoGenerate = true)
-    val id: Long = 0,
-    val title: String,
-    val description: String,
-    val category: String,
-    val type: ItemType, // LOST or FOUND
-    val location: String,
-    val dateReported: Date,
-    val contactInfo: String,
-    val imageUri: String? = null,
-    val isResolved: Boolean = false,
-    val reporterName: String,
-    val reporterEmail: String
+    @DocumentId
+    val id: String = "",
+    val userId: String = "",
+    val title: String = "",
+    val description: String = "",
+    val category: String = "",
+    val type: ItemType = ItemType.LOST,
+    val status: ItemStatus = ItemStatus.ACTIVE,
+    val location: Location = Location(),
+    val images: List<String> = emptyList(),
+    val contactInfo: ContactInfo = ContactInfo(),
+    val tags: List<String> = emptyList(),
+    val reward: Double = 0.0,
+    val createdAt: Timestamp = Timestamp.now(),
+    val updatedAt: Timestamp = Timestamp.now(),
+    val expiresAt: Timestamp = Timestamp.now(),
+    val dateReported: Timestamp = Timestamp.now(),
+    val reporterName: String = "",
+    val reporterEmail: String = "",
+    val imageUri: String = "",
+    val isResolved: Boolean = false
+)
+
+data class Location(
+    val latitude: Double = 0.0,
+    val longitude: Double = 0.0,
+    val address: String = "",
+    val placeName: String = ""
+)
+
+data class ContactInfo(
+    val phone: String = "",
+    val email: String = "",
+    val preferredContact: String = "email"
 )
 
 enum class ItemType {
     LOST, FOUND
 }
 
-enum class Category(val displayName: String) {
-    ELECTRONICS("Electronics"),
-    BOOKS("Books & Stationery"),
-    CLOTHING("Clothing & Accessories"),
-    PERSONAL_ITEMS("Personal Items"),
-    BAGS("Bags & Backpacks"),
-    JEWELRY("Jewelry"),
-    DOCUMENTS("Documents & Cards"),
-    KEYS("Keys"),
-    SPORTS("Sports Equipment"),
-    OTHER("Other")
+enum class ItemStatus {
+    ACTIVE, RESOLVED, EXPIRED
 } 

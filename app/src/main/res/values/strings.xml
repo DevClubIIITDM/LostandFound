@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lost &amp; Found</string>
+    <string name="app_name">IIITD&amp;M Lost &amp; Found</string>
+    
+    <!-- Landing Page -->
+    <string name="landing_title">IIITD&amp;M Lost &amp; Found</string>
+    <string name="landing_tagline">IIITD&amp;M Kancheepuram - Reuniting people with their belongings, one item at a time</string>
+    <string name="landing_get_started">Get Started</string>
+    <string name="landing_why_choose_us">Why Choose Us?</string>
+    <string name="landing_feature_easy_posting">Easy Posting</string>
+    <string name="landing_feature_easy_posting_desc">Post lost or found items on IIITD&amp;M campus in seconds with our simple interface</string>
+    <string name="landing_feature_quick_search">Quick Search</string>
+    <string name="landing_feature_quick_search_desc">Find what you\'re looking for on campus with our powerful search</string>
+    <string name="landing_feature_secure">Secure &amp; Reliable</string>
+    <string name="landing_feature_secure_desc">Your data is safe with our secure IIITD&amp;M authentication system</string>
+    <string name="landing_our_impact">Our Impact</string>
+    <string name="landing_items_found">Items Found</string>
+    <string name="landing_happy_users">Happy Users</string>
+    <string name="landing_ready_to_start">Ready to Get Started?</string>
+    <string name="landing_join_thousands">Join the IIITD&amp;M community who have already found their lost items</string>
+    
+    <!-- Authentication -->
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="continue_anonymously">Continue Anonymously</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="default_web_client_id">@string/firebase_web_client_id</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="auth_subtitle">Access your IIITD&amp;M campus lost and found items</string>
+    <string name="terms_privacy">By continuing, you agree to our Terms of Service and Privacy Policy</string>
     
     <!-- Navigation -->
     <string name="title_home">Home</string>

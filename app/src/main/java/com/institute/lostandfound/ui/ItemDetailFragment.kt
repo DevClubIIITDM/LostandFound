@@ -47,10 +47,10 @@ class ItemDetailFragment : Fragment() {
             textTitle.text = item.title
             textDescription.text = item.description
             textCategory.text = item.category
-            textLocation.text = "Location: ${item.location}"
-            textDate.text = "Reported: ${SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(item.dateReported)}"
+            textLocation.text = "Location: ${item.location.address}"
+            textDate.text = "Reported: ${SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(item.dateReported.toDate())}"
             textReporter.text = "Reported by: ${item.reporterName}"
-            textContact.text = item.contactInfo
+            textContact.text = item.contactInfo.email
 
             // Set type indicator
             chipType.text = if (item.type == ItemType.LOST) "LOST" else "FOUND"
@@ -62,20 +62,20 @@ class ItemDetailFragment : Fragment() {
             chipResolved.visibility = if (item.isResolved) View.VISIBLE else View.GONE
 
             // Load image if available
-            item.imageUri?.let { uri ->
+            if (item.imageUri.isNotEmpty()) {
                 imageView.visibility = View.VISIBLE
                 Glide.with(this@ItemDetailFragment)
-                    .load(uri)
+                    .load(item.imageUri)
                     .placeholder(R.drawable.ic_placeholder)
                     .error(R.drawable.ic_placeholder)
                     .into(imageView)
-            } ?: run {
+            } else {
                 imageView.visibility = View.GONE
             }
 
             // Setup contact button
             buttonContact.setOnClickListener {
-                contactReporter(item.reporterEmail, item.title)
+                contactReporter(item.contactInfo.email, item.title)
             }
 
             // Setup resolve button (only show if not resolved)
