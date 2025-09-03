@@ -186,6 +186,6 @@ LostAndFoundApp/
 - Sports Equipment
 - Other
 
-## Built with ❤️ using Kotlin and Android Jetpack
+## Built with using Kotlin and Android Jetpack
 
 This is a complete, production-ready Android application for managing lost and found items in educational institutions. 
